@@ -1,0 +1,102 @@
+package cse203.lab2.problem_2.priceQuote;
+
+import cse203.lab2.problem_2.customer.Customer;
+import cse203.lab2.problem_2.cake.Cake;
+
+public class PriceQuote {
+	private Double ingredientCost;
+	private Double laborCharges;
+	private Double deliveryFee;
+	private Double tax;
+	private Cake cake;
+	private Customer customer;
+
+	public PriceQuote(Double ingredientCost, Double laborCharges, Double deliveryFee, Double tax, Cake cake,
+			Customer customer) {
+		this.ingredientCost = ingredientCost;
+		this.laborCharges = laborCharges;
+		this.deliveryFee = deliveryFee;
+		this.tax = tax;
+		this.cake = cake;
+		this.customer = customer;
+	}
+
+	public Double getIngredientCost() {
+		return ingredientCost;
+	}
+
+	public void setIngredientCost(Double ingredientCost) {
+		this.ingredientCost = ingredientCost;
+	}
+
+	public Double getLaborCharges() {
+		return laborCharges;
+	}
+
+	public void setLaborCharges(Double laborCharges) {
+		this.laborCharges = laborCharges;
+	}
+
+	public Double getDeliveryFee() {
+		return deliveryFee;
+	}
+
+	public void setDeliveryFee(Double deliveryFee) {
+		this.deliveryFee = deliveryFee;
+	}
+
+	public int getTotalcost() {
+		return (int) Math.round((getIngredientCost() + getLaborCharges() + getDeliveryFee()) * (1 + tax));
+	}
+
+	public Double getTax() {
+		return tax;
+	}
+
+	public void setTax(Double tax) {
+		this.tax = tax;
+	}
+
+	public Cake getCake() {
+		return cake;
+	}
+
+	public void setCake(Cake cake) {
+		this.cake = cake;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+}
+
+/*
+ * package cse203.lab2.problem_2;
+ * 
+ * import cse203.lab2.problem_2.cake.Cake; import
+ * cse203.lab2.problem_2.customer.Customer; import
+ * cse203.lab2.problem_2.priceQuote.PriceQuote;
+ * 
+ * public class Application {
+ * 
+ * public static void main(String[] args) { Customer customer = new
+ * Customer("Huyen", "Tay Ninh", 12345, 1111); Cake cake = new Cake("Chocolate",
+ * 3, java.time.LocalDate.of(2025, 10, 15)); PriceQuote priceQuote = new
+ * PriceQuote(500.0, 200.0, 50.0, 0.07, cake, customer);
+ * displayPriceQuote(priceQuote); }
+ * 
+ * public static void displayPriceQuote(PriceQuote quote) {
+ * System.out.println("Customer Info: " + quote.getCustomer());
+ * System.out.println("Cake Info: " + quote.getCake());
+ * System.out.println("Total Price Quote: " + quote.getTotalcost()); System.out.
+ * printf("\nDetail: \n Ingredient Cost: %s\n Labor Charges: %s\n Delivery Fee: %s\n Tax: %s\n"
+ * , quote.getIngredientCost(), quote.getLaborCharges(), quote.getDeliveryFee(),
+ * quote.getTax());
+ * 
+ * } }
+ */
