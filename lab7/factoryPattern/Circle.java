@@ -1,0 +1,12 @@
+package lab7.factoryPattern;
+
+public class Circle implements Shape {
+	public Circle() {
+	}
+
+	@Override
+	public void draw() {
+		System.out.println("Drawing a Circle");
+	}
+}
+
